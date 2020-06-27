@@ -19,7 +19,7 @@ app.use(express.static("public"));
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitnessDB", { useNewUrlParser: true });
 
 // require routes
-// app.use(require("./routes/api-routes.js"));
+app.use(require("./routes/api-routes.js"));
 app.use(require("./routes/html-routes.js"));
 
 app.listen(PORT, () => {
