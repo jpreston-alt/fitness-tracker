@@ -1,18 +1,12 @@
 .main-container {
-    /* background-color: #f2f8ff; */
     background-color: #f5f8fd;
     margin: 0px;
     padding: 5% !important;
     padding-bottom: 10% !important;
 }
 
-nav {
-    /* background-color: #5e38ff; */
-}
-
 h1, h3 {
     color: #1b0d57;
-    /* color: #2c3e50; */
 }
 
 .stats-card {
