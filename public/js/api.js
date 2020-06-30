@@ -1,3 +1,5 @@
+// REQUIRE IN INDEX.HTML, EXERCISE.HTML, and STATS.HTML
+
 // creates an API object
 const API = {
 

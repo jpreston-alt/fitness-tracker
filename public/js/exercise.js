@@ -1,3 +1,5 @@
+// REQUIRED IN EXERCISE.HTML
+
 // create variables for our DOM elements
 const workoutTypeSelect = document.querySelector("#type");
 const cardioForm = document.querySelector(".cardio-form");

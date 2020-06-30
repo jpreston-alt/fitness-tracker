@@ -1,8 +1,8 @@
-// get all workout data from back-end
+// REQUIRED IN STATS.HTML
 
+// get all workout data from back-end
 fetch("/api/workouts/range")
   .then(response => {
-    // console.log(response);
     return response.json();
   })
   .then(data => {
@@ -11,30 +11,28 @@ fetch("/api/workouts/range")
   });
 
 
-API.getWorkoutsInRange()
+API.getWorkoutsInRange();
 
-  function generatePalette() {
-    const arr = [
-    "#003f5c",
-    "#2f4b7c",
-    "#665191",
-    "#a05195",
-    "#d45087",
-    "#f95d6a",
-    "#ff7c43",
-    "ffa600",
-    "#003f5c",
-    "#2f4b7c",
-    "#665191",
-    "#a05195",
-    "#d45087",
-    "#f95d6a",
-    "#ff7c43",
-    "ffa600"
+
+// generate color palette
+function generatePalette() {
+  const arr = [
+    "#f2fefb",
+    "#e2fcf4",
+    "#c2f9e8",
+    "#94f0d4",
+    "#5cedc1",
+    "#2de0aa",
+    "#5cedc1",
+    "#94f0d4",
+    "#c2f9e8",
+    "#e2fcf4",
+    "#f2fefb",
   ]
 
   return arr;
-  }
+};
+
 function populateChart(data) {
   let durations = duration(data);
   let pounds = calculateTotalWeight(data);
@@ -61,8 +59,8 @@ function populateChart(data) {
       datasets: [
         {
           label: "Workout Duration In Minutes",
-          backgroundColor: "red",
-          borderColor: "red",
+          backgroundColor: "#12e2a3",
+          borderColor: "#12e2a3",
           data: durations,
           fill: false
         }
@@ -71,14 +69,20 @@ function populateChart(data) {
     options: {
       responsive: true,
       title: {
-        display: true
+        display: false
+      },
+      legend: {
+        display: false,
       },
       scales: {
         xAxes: [
           {
             display: true,
             scaleLabel: {
-              display: true
+              display: true,
+              labelString: "Day of Week",
+              fontFamily: "'Roboto', sans- serif",
+              fontStyle: "lighter"
             }
           }
         ],
@@ -86,7 +90,10 @@ function populateChart(data) {
           {
             display: true,
             scaleLabel: {
-              display: true
+              display: true,
+              labelString: "Minutes of Exercise",
+              fontFamily: "'Roboto', sans- serif",
+              fontStyle: "lighter"
             }
           }
         ]
@@ -111,35 +118,48 @@ function populateChart(data) {
           label: "Pounds",
           data: pounds,
           backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-            "rgba(255, 159, 64, 0.2)"
+            "#F7FEFC",
+            "#f2fefb",
+            "#e2fcf4",
+            "#c2f9e8",
+            "#94f0d4",
+            "#5cedc1",
+            "#2de0aa",
           ],
-          borderColor: [
-            "rgba(255, 99, 132, 1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-            "rgba(255, 159, 64, 1)"
-          ],
-          borderWidth: 1
         }
       ]
     },
     options: {
       title: {
-        display: true,
+        display: false,
         text: "Pounds Lifted"
       },
+      legend: {
+        display: false,
+      },
       scales: {
+        xAxes: [
+          {
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: "Day of Week",
+              fontFamily: "'Roboto', sans- serif",
+              fontStyle: "lighter"
+            }
+          }
+        ],
         yAxes: [
           {
             ticks: {
               beginAtZero: true
+            },
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: "Weight Lifted (lbs)",
+              fontFamily: "'Roboto', sans- serif",
+              fontStyle: "lighter"
             }
           }
         ]
@@ -161,8 +181,16 @@ function populateChart(data) {
     },
     options: {
       title: {
-        display: true,
+        display: false,
         text: "Excercises Performed"
+      },
+      legend: {
+        display: true,
+        position: "left",
+        labels: {
+          fontFamily: "'Roboto', sans- serif",
+          fontStyle: "lighter"
+        }
       }
     }
   });
@@ -181,8 +209,16 @@ function populateChart(data) {
     },
     options: {
       title: {
-        display: true,
+        display: false,
         text: "Excercises Performed"
+      },
+      legend: {
+        display: true,
+        position: "right",
+        labels: {
+          fontFamily: "'Roboto', sans- serif",
+          fontStyle: "lighter"
+        }
       }
     }
   });

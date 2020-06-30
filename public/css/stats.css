@@ -1,0 +1,30 @@
+.main-container {
+    /* background-color: #f2f8ff; */
+    background-color: #f5f8fd;
+    margin: 0px;
+    padding: 5% !important;
+    padding-bottom: 10% !important;
+}
+
+nav {
+    /* background-color: #5e38ff; */
+}
+
+h1, h3 {
+    color: #1b0d57;
+    /* color: #2c3e50; */
+}
+
+.stats-card {
+    border: none !important;
+    border-radius: 20px !important;
+    margin-top: 40px;
+}
+
+.page-title {
+    padding: 40px 0px 60px 0px;
+}
+
+.card-title {
+    font-weight: 300 !important;
+}
