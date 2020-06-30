@@ -1,3 +1,4 @@
+// create variables for our DOM elements
 const workoutTypeSelect = document.querySelector("#type");
 const cardioForm = document.querySelector(".cardio-form");
 const resistanceForm = document.querySelector(".resistance-form");
@@ -20,18 +21,22 @@ let shouldNavigateAway = false;
 async function initExercise() {
   let workout;
 
+  // if no workout id exists create a new workout
   if (location.search.split("=")[1] === undefined) {
     workout = await API.createWorkout()
-    console.log(workout)
   }
+
+  // if workout exists add workout id to url
   if (workout) {
     location.search = "?id=" + workout._id;
   }
 
 }
 
+// when page loads check for workout id or create new workout
 initExercise();
 
+// render form based on workout type chosen
 function handleWorkoutTypeChange(event) {
   workoutType = event.target.value;
 
@@ -49,6 +54,7 @@ function handleWorkoutTypeChange(event) {
   validateInputs();
 }
 
+// if input type is empty, don't allow user to click on add or complete button
 function validateInputs() {
   let isValid = true;
 
@@ -95,9 +101,11 @@ function validateInputs() {
   }
 }
 
+// handle form submission
 async function handleFormSubmit(event) {
   event.preventDefault();
 
+  // create workoutData object, properties depend on exercise type chosen
   let workoutData = {};
 
   if (workoutType === "cardio") {
@@ -114,11 +122,15 @@ async function handleFormSubmit(event) {
     workoutData.duration = Number(resistanceDurationInput.value.trim());
   }
 
+  // add an exercise (a PUT request to update workout document by updating it's exercise array) using the newly created workoutData object
   await API.addExercise(workoutData);
+  completeButton.setAttribute("disabled", true);
+  addButton.setAttribute("disabled", true);
   clearInputs();
   toast.classList.add("success");
 }
 
+// handles workout successfully added pop up, redirects to homepage
 function handleToastAnimationEnd() {
   toast.removeAttribute("class");
   if (shouldNavigateAway) {
@@ -137,6 +149,7 @@ function clearInputs() {
   weightInput.value = "";
 }
 
+// event listeners for form and buttons
 if (workoutTypeSelect) {
   workoutTypeSelect.addEventListener("change", handleWorkoutTypeChange);
 }

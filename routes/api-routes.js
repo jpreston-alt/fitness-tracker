@@ -33,7 +33,6 @@ router.get("/api/workouts", (req, res) => {
 
 // add new workout
 router.post("/api/workouts", (req, res) => {
-    console.log(req.body);
     db.Workout.create(req.body)
         .then(data => {
             res.json(data);
@@ -43,18 +42,39 @@ router.post("/api/workouts", (req, res) => {
         });
 });
 
-// update existing working by adding a new exercise
+// update existing workout by adding a new exercise
+// router.put("/api/workouts/:id", (req, res) => {
+//     db.Workout.findOneAndUpdate(
+//         { _id : req.params.id },
+//         { $push: { exercises: req.body }},
+//         { upsert: true })
+//         .then(data => {
+//             res.json(data);
+//         })
+//         .catch(err => {
+//             res.json(err);
+//         });
+// });
+
 router.put("/api/workouts/:id", (req, res) => {
     db.Workout.findOneAndUpdate(
         { _id : req.params.id },
         { $push: { exercises: req.body }},
-        { upsert: true })
+        { upsert: true, "new": true })
         .then(data => {
-            res.json(data);
+            let duration = data.calcDuration();
+            db.Workout.findOneAndUpdate(
+                { _id: req.params.id },
+                { $set: { totalDuration: duration } },
+            )
+            .then(updated => {
+                res.json(updated);
+            })
         })
         .catch(err => {
             res.json(err);
         });
 });
+
 
 module.exports = router;
