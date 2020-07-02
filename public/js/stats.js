@@ -39,6 +39,7 @@ function populateChart(data) {
   let pounds = calculateTotalWeight(data);
   let workouts = workoutNames(data);
   const colors = generatePalette();
+  let resistanceWorkouts = resistanceWorkoutNames(data);
 
   let line = document.querySelector("#canvas").getContext("2d");
   let bar = document.querySelector("#canvas2").getContext("2d");
@@ -199,7 +200,7 @@ function populateChart(data) {
   let donutChart = new Chart(pie2, {
     type: "doughnut",
     data: {
-      labels: workouts,
+      labels: resistanceWorkouts,
       datasets: [
         {
           label: "Excercises Performed",
@@ -247,7 +248,9 @@ function calculateTotalWeight(data) {
 
   data.forEach(workout => {
     workout.exercises.forEach(exercise => {
-      total.push(exercise.weight);
+      if (exercise.type === "resistance") {
+        total.push(exercise.weight);
+      }
     });
   });
 
@@ -265,4 +268,20 @@ function workoutNames(data) {
   });
   
   return workouts;
+}
+
+// get resistance workout names
+function resistanceWorkoutNames(data) {
+  let resWorkouts = [];
+
+  data.forEach(workout => {
+    workout.exercises.forEach(exercise => {
+      if (exercise.type === "resistance") {
+        resWorkouts.push(exercise.name);
+      }
+    });
+  });
+
+  console.log(resWorkouts);
+  return resWorkouts;
 }

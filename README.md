@@ -1,16 +1,13 @@
 # [Fitness-Tracker](https://jp-fitness-tracker.herokuapp.com/)
 
 ## Description
-<!-- Finding it hard to stay motivated to workout during Quarentine? 
+Finding it hard to stay motivated to workout during Quarentine? 
 
 <p float="left">
-<img src="./public/images/readme-images/login.png" alt="Login Page Image" width="45%" style="margin: 10px;"/>
-<img src="./public/images/readme-images/dashboard.png" alt="Dashboard Image" width="45%" style="margin: 10px;"/><br>
-<img src="./public/images/readme-images/home.png" alt="Homepage Image" width="45%" style="margin: 10px;"/>
-<img src="./public/images/readme-images/spending.png" alt="Spending Page Image" width="45%" style="margin: 5px;"/><br>
-<img src="./public/images/readme-images/about.png" alt="About Page Image" width="45%" style="margin: 10px;"/>
-<img src="./public/images/readme-images/contact.png" alt="Contact Page Image" width="45%" style="margin: 10px;"/><br>
-</p> -->
+<img src="./public/images/last.png" alt="Dashboard Image" width="45%" style="margin: 10px;"/>
+<img src="./public/images/add.png" alt="Homepage Image" width="45%" style="margin: 10px;"/>
+<img src="./public/images/dashboard.png" alt="Login Page Image" width="93%" style="margin: 10px;"/>
+</p>
 
 ## Table of Contents
 * [Technologies](#technologies)
@@ -37,6 +34,8 @@
 View deployed Heroku app [here](https://jp-fitness-tracker.herokuapp.com/). <br>
 
 <!-- ![](/public/images/readme-images/check-yourself.gif) -->
+
+## Directions for Future Development
 
 ## Credits
 
