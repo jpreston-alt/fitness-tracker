@@ -5,7 +5,7 @@
 <p float="left">
 <img src="./public/images/last.png" alt="Dashboard Image" width="45%" style="margin: 10px;"/>
 <img src="./public/images/add.png" alt="Homepage Image" width="45%" style="margin: 10px;"/>
-<img src="./public/images/dashboard.png" alt="Login Page Image" width="95%" style="margin: 10px;"/>
+<img src="./public/images/dashboard.png" alt="Login Page Image" width="90%" style="margin: 10px;"/>
 </p>
 
 ## Table of Contents
@@ -32,7 +32,7 @@
 ## Finished Product
 View deployed Heroku app [here](https://jp-fitness-tracker.herokuapp.com/). <br>
 
-<!-- ![](/public/images/readme-images/check-yourself.gif) -->
+![](/public/images/fitness-tracker.gif)
 
 ## Directions for Future Development
 
