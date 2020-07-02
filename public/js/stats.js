@@ -122,13 +122,13 @@ function populateChart(data) {
           label: "Pounds",
           data: pounds,
           backgroundColor: [
-            "#F7FEFC",
+            "#2de0aa",
+            "#5cedc1",
+            "#94f0d4",
+            "#c2f9e8",
+            "#e2fcf4",
             "#f2fefb",
             "#e2fcf4",
-            "#c2f9e8",
-            "#94f0d4",
-            "#5cedc1",
-            "#2de0aa",
           ],
         }
       ]
