@@ -1,12 +1,11 @@
 # [Fitness-Tracker](https://jp-fitness-tracker.herokuapp.com/)
 
 ## Description
-Finding it hard to stay motivated to workout during Quarentine? 
 
 <p float="left">
 <img src="./public/images/last.png" alt="Dashboard Image" width="45%" style="margin: 10px;"/>
 <img src="./public/images/add.png" alt="Homepage Image" width="45%" style="margin: 10px;"/>
-<img src="./public/images/dashboard.png" alt="Login Page Image" width="93%" style="margin: 10px;"/>
+<img src="./public/images/dashboard.png" alt="Login Page Image" width="95%" style="margin: 10px;"/>
 </p>
 
 ## Table of Contents
@@ -40,4 +39,3 @@ View deployed Heroku app [here](https://jp-fitness-tracker.herokuapp.com/). <br>
 ## Credits
 
 ## Questions
-If you have any questions about the repo, please contact me, Christina, Daniel, or Svetlana via the GitHub links above.
