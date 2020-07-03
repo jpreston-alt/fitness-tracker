@@ -42,20 +42,6 @@ router.post("/api/workouts", (req, res) => {
         });
 });
 
-// update existing workout by adding a new exercise
-// router.put("/api/workouts/:id", (req, res) => {
-//     db.Workout.findOneAndUpdate(
-//         { _id : req.params.id },
-//         { $push: { exercises: req.body }},
-//         { upsert: true })
-//         .then(data => {
-//             res.json(data);
-//         })
-//         .catch(err => {
-//             res.json(err);
-//         });
-// });
-
 router.put("/api/workouts/:id", (req, res) => {
     db.Workout.findOneAndUpdate(
         { _id : req.params.id },
